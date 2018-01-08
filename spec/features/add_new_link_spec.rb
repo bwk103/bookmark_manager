@@ -1,5 +1,4 @@
-  feature 'users can add new links', type: :feature do
-
+feature 'users can add new links', type: :feature do
   scenario 'users are given option to add new link' do
     visit '/links'
     expect(page).to have_link 'Add Link'
