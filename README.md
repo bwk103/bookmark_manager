@@ -15,3 +15,7 @@ I would like to tag links in my bookmark manager
 As a time-pressed user
 So that I can quickly find links on a particular topic
 I would like to filter links by tag
+
+As a time-pressed user
+So that I can organise my links into different categories for ease of search
+I would like to add tags to the links in my bookmark manager

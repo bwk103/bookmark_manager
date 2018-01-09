@@ -11,6 +11,6 @@ def add_link_with_tag
   click_link 'Add Link'
   fill_in 'title', with: 'Twitter'
   fill_in 'url', with: 'http://www.twitter.com'
-  fill_in 'tags', with: 'Social Networks'
+  fill_in 'tags', with: 'social'
   click_button 'Submit'
 end
