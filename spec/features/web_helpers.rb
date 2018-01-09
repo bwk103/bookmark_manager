@@ -19,5 +19,6 @@ def new_user
   visit '/users/new'
   fill_in 'email', with: 'bob@test.com'
   fill_in 'password', with: 'test'
-  click_button 'Signup' 
+  fill_in 'password_confirmation', with: 'test'
+  click_button 'Signup'
 end
