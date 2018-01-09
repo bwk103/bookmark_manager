@@ -5,9 +5,19 @@
     <title>Bookmark Manager</title>
   </head>
   <body>
+
     <% if current_user %>
       <h1>Welcome to Bookmark Manager, <%=@current_user.email %></h1>
     <% end %>
+
+    <% if flash[:failure] %>
+      <div id="flash">
+        <div class="flash-warning">
+          <%= flash[:failure] %>
+        </div>
+      </div>
+    <% end %>
+
     <%=yield %>
   </body>
 </html>
