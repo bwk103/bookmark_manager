@@ -10,11 +10,13 @@
       <h1>Welcome to Bookmark Manager, <%=@current_user.email %></h1>
     <% end %>
 
-    <% if flash[:failure] %>
+    <% if flash[:error] %>
       <div id="flash">
-        <div class="flash-warning">
-          <%= flash[:failure] %>
-        </div>
+        <% flash[:error].each do |error| %>
+          <div class="flash-warning">
+            <%= error %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 

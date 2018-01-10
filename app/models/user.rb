@@ -13,6 +13,7 @@ class User
 
   validates_presence_of :email
   validates_format_of :email, :as => :email_address
+  validates_uniqueness_of :email
   validates_confirmation_of :password
 
   def password=(password)
