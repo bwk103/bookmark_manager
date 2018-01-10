@@ -8,7 +8,8 @@ require './app/app.rb'
 #
 require 'capybara/rspec'
 require './app/models/link'
-require 'features/web_helpers'
+require_relative 'helpers/web_helpers'
+require_relative 'helpers/session'
 Capybara.app = BookmarkManager
 
 require 'database_cleaner'
@@ -23,6 +24,7 @@ require 'database_cleaner'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include SessionHelpers
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean

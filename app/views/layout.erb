@@ -8,6 +8,10 @@
 
     <% if current_user %>
       <h1>Welcome, <%=@current_user.email %></h1>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Sign out">
+      </form>
     <% end %>
 
     <% if flash[:error] %>
@@ -17,6 +21,14 @@
             <%= error %>
           </div>
         <% end %>
+      </div>
+    <% end %>
+
+    <% if flash[:message] %>
+      <div id="flash">
+          <div class="flash-warning">
+            <h1><%= flash[:message] %></h1>
+          </div>
       </div>
     <% end %>
 
