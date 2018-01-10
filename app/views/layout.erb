@@ -7,7 +7,7 @@
   <body>
 
     <% if current_user %>
-      <h1>Welcome to Bookmark Manager, <%=@current_user.email %></h1>
+      <h1>Welcome, <%=@current_user.email %></h1>
     <% end %>
 
     <% if flash[:error] %>

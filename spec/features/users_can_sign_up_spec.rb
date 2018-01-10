@@ -16,7 +16,7 @@ feature 'Users can sign up', type: :feature do
   scenario 'users are welcomed on their links page' do
     DatabaseCleaner.clean
     new_user
-    expect(page).to have_content 'Welcome to Bookmark Manager, bob@test.com'
+    expect(page).to have_content 'Welcome, bob@test.com'
   end
 
   scenario 'users are added to the database' do
