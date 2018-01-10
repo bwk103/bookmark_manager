@@ -5,33 +5,9 @@
     <title>Bookmark Manager</title>
   </head>
   <body>
-
-    <% if current_user %>
-      <h1>Welcome, <%=@current_user.email %></h1>
-      <form action="/sessions" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign out">
-      </form>
-    <% end %>
-
-    <% if flash[:error] %>
-      <div id="flash">
-        <% flash[:error].each do |error| %>
-          <div class="flash-warning">
-            <%= error %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-    <% if flash[:message] %>
-      <div id="flash">
-          <div class="flash-warning">
-            <h1><%= flash[:message] %></h1>
-          </div>
-      </div>
-    <% end %>
-
+    <%= partial :current_user %>
+    <%= partial :errors %>
+    <%= partial :message %>
     <%=yield %>
   </body>
 </html>
