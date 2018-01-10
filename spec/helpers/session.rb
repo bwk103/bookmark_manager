@@ -15,4 +15,18 @@ module SessionHelpers
     fill_in 'password', with: 'test'
     click_button 'Sign in'
   end
+
+  def recover_password
+    visit '/sessions/new'
+    click_link 'Reset Password'
+    fill_in 'email', with: 'bob@test.com'
+    click_button 'Submit'
+  end
+
+  def change_password
+    visit "/users/reset_password?token=#{user.password_token}"
+    fill_in 'new_password', with: 'newtest'
+    fill_in 'new_password_confirmation', with: 'newtest'
+    click_button 'Submit'
+  end
 end

@@ -7,6 +7,7 @@ require './app/app.rb'
 # files.
 #
 require 'capybara/rspec'
+require 'timecop'
 require './app/models/link'
 require_relative 'helpers/web_helpers'
 require_relative 'helpers/session'
