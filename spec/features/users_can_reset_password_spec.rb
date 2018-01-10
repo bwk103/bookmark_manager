@@ -1,10 +1,13 @@
   describe 'reset password', type: :feature do
 
-  before(:all) do
+  before(:each) do
     DatabaseCleaner.clean
     new_user
     Capybara.reset!
+    allow(SendRecoveryLink).to receive(:call)
+
   end
+
   let(:user) { User.first }
 
   scenario 'users can see a method to retrieve password' do
@@ -73,5 +76,10 @@
     change_password
     visit "/users/reset_password?token=#{user.password_token}"
     expect(page).to have_content 'Your token is invalid'
+  end
+
+  scenario 'it calls the SendRecoverLink service to send the link' do
+    expect(SendRecoveryLink).to receive(:call).with(user)
+    recover_password
   end
 end
