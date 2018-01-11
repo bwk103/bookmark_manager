@@ -1,17 +1,5 @@
-<h2>Links</h2>
-
 <ul id="links">
   <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL: <%= link.url %>
-      Tag: <% link.tags.each do |tag| %>
-        <%= tag.name %>
-      <% end %>
-    </li>
+  <%= partial :link, locals:{link: link} %>
   <% end %>
 </ul>
-
-<a href="/links/new">Add Link</a>
-
-<a href="/sessions/new">Sign in</a>

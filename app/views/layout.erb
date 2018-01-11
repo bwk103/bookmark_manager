@@ -3,11 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Bookmark Manager</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <%= partial :current_user %>
-    <%= partial :errors %>
-    <%= partial :message %>
-    <%=yield %>
+    <div class="wrapper">
+      <%= partial :header %>
+      <%= partial :flash %>
+      <div id="container">
+        <%=yield %>
+      </div>
+      <div class="push"></div>
+    </div>
+    <!-- <div class="footer">
+      <%= partial :footer %>
+    </div> -->
   </body>
 </html>

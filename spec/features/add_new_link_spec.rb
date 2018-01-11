@@ -1,12 +1,12 @@
 feature 'users can add new links', type: :feature do
   scenario 'users are given option to add new link' do
     visit '/links'
-    expect(page).to have_link 'Add Link'
+    expect(page).to have_link 'Add link'
   end
 
   scenario 'users can add information about a new link' do
     visit '/links'
-    click_link 'Add Link'
+    click_link 'Add link'
     expect(page).to have_field 'title'
     expect(page).to have_field 'url'
     expect(page).to have_button 'Submit'
@@ -19,7 +19,6 @@ feature 'users can add new links', type: :feature do
 
   scenario 'the new link is added to the collection' do
     add_link
-    expect(page).to have_content 'Twitter'
-    expect(page).to have_content 'http://www.twitter.com'
+    expect(page).to have_link 'Twitter'
   end
 end

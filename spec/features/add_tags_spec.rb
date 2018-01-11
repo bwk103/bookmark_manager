@@ -2,7 +2,7 @@ feature 'add tags', type: :feature do
 
   scenario 'users can add individual tags to links' do
     visit '/links'
-    click_link 'Add Link'
+    click_link 'Add link'
     expect(page).to have_field 'tags'
   end
 
@@ -16,9 +16,9 @@ feature 'add tags', type: :feature do
     expect(link.tags.map(&:name)).to include('sport', 'entertainment', 'darts')
   end
 
-  scenario 'tags are saved' do
-    add_link_with_tag
-    expect(page).to have_content 'social'
-  end
+  # scenario 'tags are saved' do
+  #   add_link_with_tag
+  #   expect(page).to have_content 'social'
+  # end
 
 end

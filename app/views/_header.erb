@@ -1,0 +1,21 @@
+<header>
+  <div id="logo"><a href="/">Bookmark Manager</a></div>
+  <div><a class="button highlighted" href="/links/new">Add link</a></div>
+  <div id="user-links">
+    <% if current_user %>
+      <span id="welcome-message">
+        Welcome, <%=@current_user.email %>
+      </span>
+
+      <form id="sign-out" action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input class="button" type="submit" value="Sign out">
+      </form>
+
+    <%else %>
+      <a class="button" href="/users/new">Sign up</a>
+      <a class="button" href="/sessions/new">Sign in</a>
+    <% end %>
+
+  </div>
+</header>
